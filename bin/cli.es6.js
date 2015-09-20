@@ -72,7 +72,7 @@ Promise.resolve()
 
       updateProgress({bCurr: latestDB.height, bTotal: latestBitcoind.height})
 
-      if (latestDB.height >= latestBitcoind.height) {
+      if (latestDB.height >= latestBitcoind.height) { //jorgen@webworks.se, should there not be a check here if the hash is the same?
         await scandata.undoTo(latestBitcoind.height)
         continue
       }
